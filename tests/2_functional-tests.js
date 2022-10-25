@@ -16,11 +16,11 @@ suite("Functional Tests", function () {
         const output = JSON.parse(res.text);
         assert.equal(output.initNum, 10);
         assert.equal(output.initUnit, "L");
-        assert.approximately(output.returnNum, 2.64172, 0.0001);
+        assert.equal(output.returnNum, 2.64172);
         assert.equal(output.returnUnit, "gal");
         assert.equal(
           output.string,
-          `10 liters converts to ${output.returnNum} gallons.`
+          `10 liters converts to 2.64172 gallons`
         );
         done();
       });
@@ -71,11 +71,11 @@ suite("Functional Tests", function () {
         const output = JSON.parse(res.text);
         assert.equal(output.initNum, 1);
         assert.equal(output.initUnit, "kg");
-        assert.approximately(output.returnNum, 2.20462, 0.0001);
+        assert.equal(output.returnNum, 2.20462);
         assert.equal(output.returnUnit, "lbs");
         assert.equal(
           output.string,
-          `1 kilograms converts to ${output.returnNum} pounds.`
+          `1 kilograms converts to 2.20462 pounds`
         );
         done();
       });
