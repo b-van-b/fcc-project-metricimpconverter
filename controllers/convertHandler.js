@@ -44,7 +44,7 @@ function ConvertHandler() {
     const divisor = result.indexOf("/");
     if (divisor > -1) {
       // reject multiple divisors
-      if (result.indexOf("/", divisor + 1) > -1) return "invalid number";
+      if (result.indexOf("/", divisor + 1) > -1) return "invalid";
       // handle single divisor
       result =
         Number(result.slice(0, divisor)) / Number(result.slice(divisor + 1));
@@ -56,10 +56,10 @@ function ConvertHandler() {
   this.getUnit = function (input) {
     let result = input.match(/[a-z]+$/i);
     // reject empty unit
-    if (!result) return "invalid unit";
+    if (!result) return "invalid";
     result = result[0].toLowerCase();
     // check if unit exists
-    if (!this.units[result]) return "invalid unit";
+    if (!this.units[result]) return "invalid";
     // capitalize L for liters
     if (this.units[result].capital) {
       result = this.units[result].capital;
@@ -91,7 +91,7 @@ function ConvertHandler() {
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}.`;
+    let result = `${initNum} ${this.units[initUnit].long} converts to ${returnNum} ${this.units[returnUnit].long}.`;
 
     return result;
   };

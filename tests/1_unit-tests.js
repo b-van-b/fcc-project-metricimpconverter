@@ -62,8 +62,8 @@ suite("Unit Tests", function () {
   test("return error on double fraction", function () {
     assert.equal(
       convertHandler.getNum("3/4/5km"),
-      "invalid number",
-      "getNum('3/4/5km') should return 'invalid number'"
+      "invalid",
+      "getNum('3/4/5km') should return 'invalid'"
     );
   });
   // #6
@@ -85,12 +85,12 @@ suite("Unit Tests", function () {
   });
   // #8
   test("error on invalid units", function () {
-    assert.equal(convertHandler.getUnit("kms"),"invalid unit");
-    assert.equal(convertHandler.getUnit("32miles"),"invalid unit");
-    assert.equal(convertHandler.getUnit("3/4gjir"),"invalid unit");
-    assert.equal(convertHandler.getUnit("5.45"),"invalid unit");
-    assert.equal(convertHandler.getUnit("27helahi"),"invalid unit");
-    assert.equal(convertHandler.getUnit("769kl?"),"invalid unit");
+    assert.equal(convertHandler.getUnit("kms"),"invalid");
+    assert.equal(convertHandler.getUnit("32miles"),"invalid");
+    assert.equal(convertHandler.getUnit("3/4gjir"),"invalid");
+    assert.equal(convertHandler.getUnit("5.45"),"invalid");
+    assert.equal(convertHandler.getUnit("27helahi"),"invalid");
+    assert.equal(convertHandler.getUnit("769kl?"),"invalid");
   });
   // #9
   test("give correct output units", function () {
