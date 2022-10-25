@@ -87,7 +87,7 @@ function ConvertHandler() {
     // const miToKm = 1.60934;
     let result = initNum * this.units[initUnit].ratio;
 
-    return result;
+    return result.toFixed(5);
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
