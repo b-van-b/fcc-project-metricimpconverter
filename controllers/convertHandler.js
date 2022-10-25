@@ -91,7 +91,7 @@ function ConvertHandler() {
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    let result = `${initNum} ${this.units[initUnit].long} converts to ${returnNum} ${this.units[returnUnit].long}.`;
+    let result = `${initNum} ${this.units[initUnit].long} converts to ${returnNum} ${this.units[returnUnit].long}`;
 
     return result;
   };
