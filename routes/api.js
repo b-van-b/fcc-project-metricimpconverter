@@ -13,8 +13,11 @@ module.exports = function (app) {
       initUnit: convertHandler.getUnit(input),
     };
     // check for invalid input
-    if (output.initNum=="invalid") return res.text("invalid number");
-    if (output.initUnit=="invalid") return res.text("invalid unit");
+    if (output.initNum=="invalid" && output.initUnit=="invalid"){
+      return res.json("invalid number and unit");
+    } 
+    if (output.initNum=="invalid") return res.json("invalid number");
+    if (output.initUnit=="invalid") return res.json("invalid unit");
 
     output.returnNum = convertHandler.convert(output.initNum, output.initUnit);
     output.returnUnit = convertHandler.getReturnUnit(output.initUnit);
